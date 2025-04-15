@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('declaracoes', function (Blueprint $table) {
             $table->id();
+            $table->string('hash')->unique();
+            $table->datetime('data');
+            $table->integer('aluno_id')->nullable();
+            $table->integer('comprovante_id')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('comprovantes', function (Blueprint $table) {
             $table->id();
+            $table->integer('horas');
+            $table->string('atividade');
+            $table->integer('categoria_id')->nullable();
+            $table->integer('aluno_id')->nullable();
+            $table->integer('user_id')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
