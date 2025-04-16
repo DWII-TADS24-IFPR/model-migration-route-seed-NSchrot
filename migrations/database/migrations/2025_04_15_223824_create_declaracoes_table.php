@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('hash')->unique();
             $table->datetime('data');
-            $table->integer('aluno_id')->nullable();
-            $table->integer('comprovante_id')->nullable();
+            $table->unsignedBigInteger('aluno_id');
+            $table->foreign('aluno_id')->references('id')->on('alunos')->onDelete('cascade');
+            $table->unsignedBigInteger('comprovante_id');
+            $table->foreign('comprovante_id')->references('id')->on('comprovantes')->onDelete('cascade');
             $table->softDeletes();
             $table->timestamps();
         });

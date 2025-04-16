@@ -17,4 +17,9 @@ class Curso extends Model
         'nivel_id',
         'eixo_id',
     ];
+
+    public function nivel()
+    {
+        return $this->belongsTo(Nivel::class);
+    }
 }

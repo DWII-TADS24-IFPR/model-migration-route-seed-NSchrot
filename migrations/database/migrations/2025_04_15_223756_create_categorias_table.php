@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->integer('maximo_horas');
-            $table->integer('curso_id')->nullable();
+            $table->unsignedBigInteger('curso_id');
+            $table->foreign('curso_id')->references('id')->on('cursos')->onDelete('cascade');
             $table->softDeletes();
             $table->timestamps();
         });

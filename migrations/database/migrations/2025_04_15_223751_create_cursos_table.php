@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('nome');
             $table->string('sigla')->unique();
             $table->integer('total_horas');
-            $table->integer('nivel_id')->nullable();
+            $table->unsignedBigInteger('nivel_id');
+            $table->foreign('nivel_id')->references('id')->on('niveis')->onDelete('cascade');
             $table->integer('eixo_id')->nullable();
             $table->softDeletes();
             $table->timestamps();

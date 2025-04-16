@@ -20,4 +20,13 @@ class Aluno extends Model
         'curso_id',
         'turma_id',
     ];
+
+    public function curso()
+    {
+        return $this->belongsTo(Curso::class);
+    }
+    public function turma()
+    {
+        return $this->belongsTo(Turma::class);
+    }
 }

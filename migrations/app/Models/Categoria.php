@@ -17,4 +17,9 @@ class Categoria extends Model
         'curso_id',
     ];
 
+    public function curso()
+    {
+        return $this->belongsTo(Curso::class);
+    }
+
 }

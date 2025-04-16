@@ -19,4 +19,9 @@ class Documento extends Model
         'categoria_id',
         'user_id',
     ];
+
+    public function categoria()
+    {
+        return $this->belongsTo(Categoria::class);
+    }
 }

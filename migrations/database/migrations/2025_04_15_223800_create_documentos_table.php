@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('status');
             $table->string('comentario');
             $table->float('horas_out');
-            $table->integer('categoria_id')->nullable();
+            $table->unsignedBigInteger('categoria_id');
+            $table->foreign('categoria_id')->references('id')->on('categorias')->onDelete('cascade');
             $table->integer('user_id')->nullable();
             $table->softDeletes();
             $table->timestamps();

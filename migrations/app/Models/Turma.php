@@ -13,4 +13,9 @@ class Turma extends Model
         'curso_id',
         'ano',
     ];
+
+    public function curso()
+    {
+        return $this->belongsTo(Curso::class);
+    }
 }

@@ -17,4 +17,14 @@ class Comprovante extends Model
         'aluno_id',
         'user_id',
     ];
+
+    public function aluno()
+    {
+        return $this->belongsTo(Aluno::class);
+    }
+    
+    public function categoria()
+    {
+        return $this->belongsTo(Categoria::class);
+    }
 }
